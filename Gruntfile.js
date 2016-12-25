@@ -12,14 +12,17 @@ module.exports = function(grunt) {
 
         'http-server': {
             testing: {
-                port: 4000,
+                root: './app',
                 host: '0.0.0.0',
+                port: 4000,
                 runInBackground: true,
-                logFn: function(req, res, error) { }
+                logFn(req, res, error) { }
             },
             production:{
+                root: './app',
+                host:'0.0.0.0',
                 port:4000,
-                host:'0.0.0.0'
+                logFn(req, res, error) { }
             }
         },
 
@@ -29,19 +32,19 @@ module.exports = function(grunt) {
                     format    : './node_modules/eslint-formatter-checkstyle-relative-paths',
                     outputFile: 'eslint.xml'
                 },
-                src    : ['./js/**/*.js']
+                src    : ['./app/**/*.js']
             },
             dev    : {
                 options: {
                     format: 'stylish'
                 },
-                src    : ['./js/**/*.js']
+                src    : ['./app/**/*.js']
             },
             watch  : {
                 options: {
                     format: 'stylish'
                 },
-                src    : ['./js/**/*.js']
+                src    : ['./app/**/*.js']
             }
         },
 
@@ -53,7 +56,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src   : 'index.html',
+                        src   : './app/index.html',
                         dest  : '.'
                     }
                 ]
@@ -63,14 +66,14 @@ module.exports = function(grunt) {
         protractor: {
             jenkins: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
                 options: {
-                    configFile: "e2e/jenkins-test-conf.js", // Default config file
+                    configFile: 'e2e/jenkins-test-conf.js', // Default config file
                     keepAlive: true, // If false, the grunt process stops when the test fails.
                     noColor: false // If true, protractor will not use colors in its output.
                 }
             },
             test: {
                 options: {
-                    configFile: "e2e/test-conf.js", // Default config file
+                    configFile: 'e2e/test-conf.js', // Default config file
                     keepAlive: true, // If false, the grunt process stops when the test fails.
                     noColor: false // If true, protractor will not use colors in its output.
                 }
@@ -79,14 +82,14 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('jenkins', [
-        'env:dev', 'eslint:jenkins','http-server:testing','protractor:jenkins'
+        'env:dev', 'eslint:jenkins', 'http-server:testing', 'protractor:jenkins'
     ]);
 
     grunt.registerTask('test', [
-        'eslint:dev', 'http-server:testing','protractor:test'
+        'eslint:dev', 'http-server:testing', 'protractor:test'
     ]);
 
     grunt.registerTask('start', [
-       'processhtml:dist', 'http-server:production'
+        'processhtml:dist', 'http-server:production'
     ]);
 };
