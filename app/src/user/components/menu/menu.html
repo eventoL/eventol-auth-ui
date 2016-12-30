@@ -17,5 +17,13 @@
                 <md-icon md-font-icon="icon-account" class="icon"></md-icon>
                 <md-button>My Profile</md-button>
             </md-menu-item>
+            <md-menu-divider role="separator"></md-menu-divider>
+
+            <md-menu-item class="md-indent">
+                <md-icon md-font-icon="icon-logout" class="icon ng-isolate-scope md-font icon-logout material-icons md-default-theme" aria-hidden="true"></md-icon>
+                <button class="md-button md-ink-ripple md-default-theme" type="button" ng-click="ctrl.logout()" role="menuitem" aria-label="Logout">
+                    <span class="ng-scope">Logout</span>
+                </button>
+            </md-menu-item>
         </md-menu-content>
 </md-menu-bar>
