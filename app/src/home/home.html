@@ -6,12 +6,19 @@
         </div>
     </md-toolbar>
     <div class="">
-        <navigation></naviation>
+        <navigation>
+            </naviation>
     </div>
 </md-sidenav>
 
 <div id="content-container" flex layout="column">
-    <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar"  layout-align="end end">
+    <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar" layout-align="end end" layout="row">
+        <md-menu flex="100" hide-gt-sm class="navigation-toggle">
+            <md-button class="md-icon-button left" ng-click="toggleLeft()" aria-label="Open Menu">
+                <md-icon md-font-icon="icon-menu"></md-icon>
+            </md-button>
+            <span></span>
+        </md-menu>
         <md-menu-bar id="user-menu">
             <md-menu md-position-mode="right bottom">
                 <md-button class="user-button" ng-click="$mdOpenMenu()" aria-label="User settings" translate translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
