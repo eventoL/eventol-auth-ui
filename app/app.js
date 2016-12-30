@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('eventolAuth', [
+angular.module('dogo', [
     'ngMaterial',
     'ngRoute',
     'ngMessages',

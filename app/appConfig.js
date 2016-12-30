@@ -1,5 +1,5 @@
 'use strict';
-angular.module('eventolAuth')
+angular.module('dogo')
     .config(function($mdThemingProvider, $routeProvider, $mdIconProvider) {
         $routeProvider.when('/', {
             templateUrl: 'src/home/home.html',
