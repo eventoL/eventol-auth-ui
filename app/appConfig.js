@@ -17,5 +17,5 @@ angular.module('dogo')
             controllerAs:'cntrl'
         });
 
-        $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons//avatar-icons.svg', 128);
+        $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons/avatar-icons.svg', 128);
     });

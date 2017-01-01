@@ -1,7 +1,7 @@
 'use strict';
 (function() {
     angular
-        .module('protractor-example-dev', ['protractor-example', 'ngMockE2E'])
+        .module('dogo-dev', ['protractor-example', 'ngMockE2E'])
         .run(function($httpBackend, USER_API) {
             $httpBackend.whenGET(/js\/.*/).passThrough();
             $httpBackend.whenGET(/bower_components\/.*/).passThrough();
@@ -30,7 +30,7 @@
 
     if (angular.mock) {
         angular.element(document).ready(function() {
-            angular.bootstrap(document, ['protractor-example-dev']);
+            angular.bootstrap(document, ['dogo-dev']);
         });
     }
 })();
