@@ -1,7 +1,7 @@
 'use strict';
 (function() {
     angular
-        .module('dogo-dev', ['protractor-example', 'ngMockE2E'])
+        .module('dogo-dev', ['dogo', 'ngMockE2E'])
         .run(function($httpBackend, USER_API) {
             $httpBackend.whenGET(/js\/.*/).passThrough();
             $httpBackend.whenGET(/bower_components\/.*/).passThrough();

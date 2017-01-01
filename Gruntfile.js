@@ -39,12 +39,6 @@ module.exports = function(grunt) {
                     format: 'stylish'
                 },
                 src    : ['./app/**/*.js']
-            },
-            watch  : {
-                options: {
-                    format: 'stylish'
-                },
-                src    : ['./app/**/*.js']
             }
         },
 
