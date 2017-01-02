@@ -1,24 +1,26 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" flex="20" md-component-id="left" class="md-whiteframe-z2 md-primary-bg">
-    <md-toolbar class="md-whiteframe-1dp md-primary-bg" layout="row" layout-align="space-between center" layout-padding>
-        <div class="logo" layout="row" layout-align="start center">
-            <!-- <span class="logo-image">EA</span> -->
-            <span class="logo-text">Dogo</span>
+<div layout="row" layout-fill>
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" flex="20" md-component-id="left" class="md-whiteframe-z2 md-primary-bg">
+        <md-toolbar class="md-whiteframe-1dp md-primary-bg" layout="row" layout-align="space-between center" layout-padding>
+            <div class="logo" layout="row" layout-align="start center">
+                <!-- <span class="logo-image">EA</span> -->
+                <span class="logo-text">Dogo</span>
+            </div>
+        </md-toolbar>
+        <div class="">
+            <navigation></navigation>
         </div>
-    </md-toolbar>
-    <div class="">
-        <navigation></navigation>
-    </div>
-</md-sidenav>
+    </md-sidenav>
 
-<div id="content-container" flex layout="column">
-    <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar" layout-align="end end" layout="row">
-        <md-menu flex="100" hide-gt-sm class="navigation-toggle">
-            <md-button class="md-icon-button left" ng-click="toggleLeft()" aria-label="Open Menu">
-                <md-icon md-font-icon="icon-menu"></md-icon>
-            </md-button>
-            <span></span>
-        </md-menu>
-        <user-menu></user-menu>
-    </md-toolbar>
-    <md-content></md-content>
+    <div id="content-container" flex layout="column">
+        <md-toolbar id="toolbar" class="md-menu-toolbar md-whiteframe-1dp ng-scope md-default-theme" ui-view="toolbar" layout-align="end end" layout="row">
+            <md-menu flex="100" hide-gt-sm class="navigation-toggle">
+                <md-button class="md-icon-button left" ng-click="toggleLeft()" aria-label="Open Menu">
+                    <md-icon md-font-icon="icon-menu"></md-icon>
+                </md-button>
+                <span></span>
+            </md-menu>
+            <user-menu></user-menu>
+        </md-toolbar>
+        <md-content></md-content>
+    </div>
 </div>
