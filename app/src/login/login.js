@@ -1,3 +1,5 @@
 'use strict';
 
-angular.module('login', []);
+angular.module('login', [])
+    .config(function loginConfig() {
+    });

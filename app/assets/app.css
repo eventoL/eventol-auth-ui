@@ -48645,7 +48645,8 @@ md-dialog.event-calendar-dialog md-dialog-content md-tabs md-dialog-actions {
 
 #login {
     height: 100%;
-    background: url("/assets/images/backgrounds/march.jpg") no-repeat;
+    /*background: url("/assets/images/backgrounds/march.jpg") no-repeat;*/
+    background-color: rgb(45,50,62);
     background-size: cover;
 }
 
@@ -48970,7 +48971,8 @@ md-dialog.event-calendar-dialog md-dialog-content md-tabs md-dialog-actions {
 
 #register {
     height: 100%;
-    background: url("/assets/images/backgrounds/march.jpg") no-repeat;
+    /*background: url("/assets/images/backgrounds/march.jpg") no-repeat;*/
+    background-color: rgb(45,50,62);
     background-size: cover;
 }
 

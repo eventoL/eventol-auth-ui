@@ -5,5 +5,8 @@ angular.module('dogo', [
     'ngRoute',
     'ngMessages',
     'ngSanitize',
-    'home'
+    'angular-storage',
+    'home',
+    'login',
+    'register'
 ]);
