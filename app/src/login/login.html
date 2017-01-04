@@ -21,12 +21,10 @@
                     </div>
                 </md-input-container>
 
-                <div class="remember-forgot-password" layout="row" layout-xs="column" layout-align="space-between center">
-                    <md-checkbox class="remember-me" ng-model="data.cb1" aria-label="Remember Me">
-                        <span translate="LOGIN.REMEMBER_ME">Remember Me</span>
-                    </md-checkbox>
-
-                    <a ui-sref="app.pages_auth_forgot-password" class="forgot-password md-accent-color" translate="LOGIN.FORGOT_PASSWORD">Forgot Password?</a>
+                <div layout="row" layout-padding layout-wrap layout-fill ng-hide="$ctrl.msg == null">
+                    <div md-whiteframe="3" class="padded" flex  id="msg">
+                        {{ $ctrl.msg }}
+                    </div>
                 </div>
 
                 <md-button type="submit" class="md-raised md-accent submit-button" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine" translate="LOGIN.LOG_IN" translate-attr-aria-label="LOGIN.LOG_IN">
@@ -34,33 +32,9 @@
                 </md-button>
             </form>
 
-            <div class="separator">
-                <span class="text" translate="LOGIN.OR">OR</span>
-            </div>
-
-            <div layout="row">
-                <md-button class="md-raised google" aria-label="g+">
-                    <div layout="row" layout-align="center center">
-                        <span>
-                            <md-icon md-font-icon="icon-google-plus" class="s16"></md-icon>
-                            <span translate="LOGIN.WITH_GOOGLE">Log in with Google</span>
-                        </span>
-                    </div>
-                </md-button>
-
-                <md-button class="md-raised facebook" aria-label="Facebook">
-                    <div layout="row" layout-align="center center">
-                        <span>
-                            <md-icon md-font-icon="icon-facebook" class="s16"></md-icon>
-                            <span translate="LOGIN.WITH_FACEBOOK">Log in with Facebook</span>
-                        </span>
-                    </div>
-                </md-button>
-            </div>
-
             <div class="register" layout="row" layout-sm="column" layout-align="center center">
                 <span class="text" translate="LOGIN.DONT_HAVE_ACCOUNT">Don't have an account?</span>
-                <a class="link" ui-sref="app.pages_auth_register" translate="LOGIN.CREATE_ACCOUNT">Create an account</a>
+                <a class="link" href='#!/register' translate="LOGIN.CREATE_ACCOUNT">Create an account</a>
             </div>
         </div>
     </div>

@@ -6,11 +6,13 @@ angular.module('login')
             var credentials = $scope.$ctrl.form;
 
             loginService.login(credentials)
-            .then(function(response) {
-                var token = response.data.jwt;
-                store.set('jwt', token);
-            }, function(error) {
-                var errorMsg = error.data.message;
-            });
+                .then(function(response) {
+                    var token = response.data.jwt;
+                    store.set('jwt', token);
+                    $location.path('/');
+                }, function(error) {
+                    var errorMsg = error.data.message;
+                    $scope.$ctrl.msg = errorMsg;
+                });
         };
     });
