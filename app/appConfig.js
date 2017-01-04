@@ -5,9 +5,7 @@ angular.module('dogo')
             templateUrl: 'src/home/home.html',
             controller: 'HomeController',
             resolve: {
-                access: function Access(store) {
-                    return store.get('jwt') !== null;
-                }
+
             }
         })
         .when('/login', {
@@ -17,7 +15,8 @@ angular.module('dogo')
         })
         .when('/register', {
             templateUrl: 'src/register/register.html',
-            controller: 'RegisterController'
+            controller: 'RegisterController',
+            controllerAs: 'registerCtrl'
         });
 
         $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons/avatar-icons.svg', 128);
