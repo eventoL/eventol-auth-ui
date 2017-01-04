@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('login')
-    .service('loginService', function loginService($http) {
-        var urlLogin = 'http://localhost:3000/api/login';
+    .service('loginService', function LoginService($http, apiBaseUrl) {
+        var urlLogin = apiBaseUrl + '/login';
 
         this.login = function login(credentials) {
             return $http.post(urlLogin, credentials);
