@@ -4,9 +4,9 @@
 
             <div class="title" translate="REGISTER.TITLE">Create an account</div>
 
-            <form name="registerForm" novalidate ng-submit="registerCtrl.register()">
+            <form name="registerForm" novalidate ng-submit="signupCtrl.signup()">
                 <md-input-container class="md-block" md-no-float>
-                    <input name="username" ng-model="registerCtrl.user.username" placeholder="Username"
+                    <input name="username" ng-model="signupCtrl.user.username" placeholder="Username"
                            translate translate-attr-placeholder="REGISTER.NAME"
                            required>
                     <div ng-messages="registerForm.username.$error" role="alert">
@@ -17,7 +17,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="email" name="email" ng-model="registerCtrl.user.email" placeholder="Email"
+                    <input type="email" name="email" ng-model="signupCtrl.user.email" placeholder="Email"
                            translate translate-attr-placeholder="REGISTER.EMAIL"
                            ng-pattern="/^.+@.+\..+$/" required>
                     <div ng-messages="registerForm.email.$error" role="alert" multiple>
@@ -31,7 +31,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="password" name="password" ng-model="registerCtrl.user.password" placeholder="Password"
+                    <input type="password" name="password" ng-model="signupCtrl.user.password" placeholder="Password"
                            translate translate-attr-placeholder="REGISTER.PASSWORD"
                            required>
                     <div ng-messages="registerForm.password.$error" role="alert">
@@ -42,7 +42,7 @@
                 </md-input-container>
 
                 <md-input-container class="md-block" md-no-float>
-                    <input type="password" name="passwordConfirm" ng-model="registerCtrl.user.passwordConfirm"
+                    <input type="password" name="passwordConfirm" ng-model="signupCtrl.user.passwordConfirm"
                            placeholder="Password (Confirm)"
                            translate translate-attr-placeholder="REGISTER.PASSWORD_CONFIRM"
                            required>
@@ -53,9 +53,9 @@
                     </div>
                 </md-input-container>
 
-                <div layout="row" layout-padding layout-wrap layout-fill ng-show="registerCtrl.msg">
+                <div layout="row" layout-padding layout-wrap layout-fill ng-show="signupCtrl.msg">
                     <div md-whiteframe="3" class="padded" flex  id="msg">
-                        {{ registerCtrl.msg }}
+                        {{ signupCtrl.msg }}
                     </div>
                 </div>
 

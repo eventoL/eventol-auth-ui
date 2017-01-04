@@ -3,20 +3,17 @@ angular.module('dogo')
     .config(function($mdThemingProvider, $routeProvider, $mdIconProvider) {
         $routeProvider.when('/', {
             templateUrl: 'src/home/home.html',
-            controller: 'HomeController',
-            resolve: {
-
-            }
+            controller: 'HomeController'
         })
         .when('/login', {
             templateUrl: 'src/login/login.html',
             controller: 'LoginController',
             controllerAs: 'loginCtrl'
         })
-        .when('/register', {
-            templateUrl: 'src/register/register.html',
-            controller: 'RegisterController',
-            controllerAs: 'registerCtrl'
+        .when('/signup', {
+            templateUrl: 'src/signup/signup.html',
+            controller: 'SignupController',
+            controllerAs: 'signupCtrl'
         });
 
         $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons/avatar-icons.svg', 128);

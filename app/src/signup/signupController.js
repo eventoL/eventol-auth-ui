@@ -1,17 +1,17 @@
 'use strict';
 
-function RegisterController($location, store, registerService) {
+function SignupController($location, store, signupService) {
     var self = this;
 
     self.user = {};
-    self.register = function register() {
+    self.signup = function signup() {
 
         if(self.user.password !== self.user.passwordConfirm) {
             self.msg = 'Password and Confirmation do not match.';
             return;
         }
 
-        registerService.register(self.user)
+        signupService.signup(self.user)
         .then(function(response) {
             var token = response.data.jwt;
             store.set('jwt', token);
@@ -24,5 +24,5 @@ function RegisterController($location, store, registerService) {
 }
 
 
-angular.module('register')
-    .controller('RegisterController', ['$location', 'store', 'registerService', RegisterController]);
+angular.module('signup')
+    .controller('SignupController', ['$location', 'store', 'signupService', SignupController]);

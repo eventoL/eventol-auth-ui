@@ -8,5 +8,5 @@ angular.module('dogo', [
     'angular-storage',
     'home',
     'login',
-    'register'
+    'signup'
 ]);
