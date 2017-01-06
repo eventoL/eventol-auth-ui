@@ -6,7 +6,9 @@ angular.module('dogo', [
     'ngSanitize',
     'ui.router',
     'angular-storage',
+    'angular-jwt',
     'home',
     'login',
-    'signup'
+    'signup',
+    'authManager'
 ]);

@@ -1,21 +1,19 @@
 'use strict';
 
-function LoginController($location, store, loginService) {
+function LoginController($state, authManagerService) {
     var self = this;
 
     self.user = {};
     self.login = function login() {
-        loginService.login(self.user)
-        .then(function(response) {
-            var token = response.data.jwt;
-            store.set('jwt', token);
-            $location.path('/');
-        }, function(error) {
-            var errorMsg = error.data.message;
-            self.msg = errorMsg;
+        authManagerService.login(self.user)
+        .then(function() {
+            $state.go('home');
+        })
+        .catch(function(error) {
+            self.msg = error.data.message;
         });
     };
 }
 
 angular.module('login')
-    .controller('LoginController', ['$location', 'store', 'loginService', LoginController]);
+    .controller('LoginController', ['$state', 'authManagerService', LoginController]);

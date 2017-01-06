@@ -1,9 +1,9 @@
 'use strict';
 
-function MenuController(store, $state) {
+function MenuController($state, authManagerService) {
     var self = this;
     self.logout = function logout() {
-        store.remove('jwt');
+        authManagerService.logout();
         $state.go('login');
     };
 }

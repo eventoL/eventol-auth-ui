@@ -1,6 +1,6 @@
 'use strict';
 
-function SignupController($location, store, signupService) {
+function SignupController($state, authManagerService) {
     var self = this;
 
     self.user = {};
@@ -11,18 +11,16 @@ function SignupController($location, store, signupService) {
             return;
         }
 
-        signupService.signup(self.user)
-        .then(function(response) {
-            var token = response.data.jwt;
-            store.set('jwt', token);
-            $location.path('/');
-        }, function(error) {
-            var errorMsg = error.data.message;
-            self.msg = errorMsg;
+        authManagerService.signup(self.user)
+        .then(function() {
+            $state.go('home');
+        })
+        .catch(function(error) {
+            self.msg = error.data.message;
         });
     };
 }
 
 
 angular.module('signup')
-    .controller('SignupController', ['$location', 'store', 'signupService', SignupController]);
+    .controller('SignupController', ['$state', 'authManagerService', SignupController]);
