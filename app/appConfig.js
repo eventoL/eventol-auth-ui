@@ -1,20 +1,28 @@
 'use strict';
 angular.module('dogo')
-    .config(function($mdThemingProvider, $routeProvider, $mdIconProvider) {
-        $routeProvider.when('/', {
+    .config(function($mdThemingProvider, $stateProvider, $urlRouterProvider, $locationProvider, $mdIconProvider) {
+        // $locationProvider.html5Mode(true);
+
+        $stateProvider.state('home', {
+            url :'/',
             templateUrl: 'src/home/home.html',
             controller: 'HomeController'
         })
-        .when('/login', {
+        .state('login', {
+            url:'/login',
             templateUrl: 'src/login/login.html',
             controller: 'LoginController',
-            controllerAs: 'loginCtrl'
+            controllerAs: 'loginCtrl',
+            noLoginRequired: true
         })
-        .when('/signup', {
+        .state('signup', {
+            url:'/signup',
             templateUrl: 'src/signup/signup.html',
             controller: 'SignupController',
-            controllerAs: 'signupCtrl'
+            controllerAs: 'signupCtrl',
+            noLoginRequired: true
         });
+        $urlRouterProvider.otherwise('/');
 
         $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons/avatar-icons.svg', 128);
     })

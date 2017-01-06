@@ -2,9 +2,9 @@
 
 angular.module('dogo', [
     'ngMaterial',
-    'ngRoute',
     'ngMessages',
     'ngSanitize',
+    'ui.router',
     'angular-storage',
     'home',
     'login',

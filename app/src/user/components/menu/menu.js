@@ -1,16 +1,16 @@
 'use strict';
 
-function MenuController(store, $location) {
+function MenuController(store, $state) {
     var self = this;
     self.logout = function logout() {
         store.remove('jwt');
-        $location.path('/login');
+        $state.go('login');
     };
 }
 
 angular.module('dogo')
     .component('userMenu', {
         templateUrl: './src/user/components/menu/menu.html',
-        controller:MenuController,
+        controller: MenuController,
         controllerAs: 'menuCtrl'
     });
