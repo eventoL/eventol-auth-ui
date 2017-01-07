@@ -4,10 +4,8 @@
             <div layout="row" layout-align="space-between center">
                 <div class="avatar-wrapper">
                     <img md-menu-align-target class="avatar" src="assets/images/avatars/profile.jpg">
-                    <md-icon md-font-icon ng-class="$ctrl.userStatus.icon" ng-style="{'color': $ctrl.userStatus.color }" class="icon status s16">
-                    </md-icon>
                 </div>
-                <span class="username" hide-xs>{{ $ctrl.user.name }}</span>
+                <span class="username" hide-xs>{{ menuCtrl.user.name }}</span>
                 <md-icon md-font-icon="icon-chevron-down" class="icon s16" hide-xs></md-icon>
             </div>
         </md-button>
@@ -21,7 +19,7 @@
 
             <md-menu-item class="md-indent">
                 <md-icon md-font-icon="icon-logout" class="icon ng-isolate-scope md-font icon-logout material-icons md-default-theme" aria-hidden="true"></md-icon>
-                <button class="md-button md-ink-ripple md-default-theme" type="button" ng-click="$ctrl.logout()" role="menuitem" aria-label="Logout">
+                <button class="md-button md-ink-ripple md-default-theme" type="button" ng-click="menuCtrl.logout()" role="menuitem" aria-label="Logout">
                     <span class="ng-scope">Logout</span>
                 </button>
             </md-menu-item>

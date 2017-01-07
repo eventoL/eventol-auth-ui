@@ -2,8 +2,13 @@
 
 angular.module('dogo', [
     'ngMaterial',
-    'ngRoute',
     'ngMessages',
     'ngSanitize',
-    'home'
+    'ui.router',
+    'angular-storage',
+    'angular-jwt',
+    'home',
+    'login',
+    'signup',
+    'authManager'
 ]);

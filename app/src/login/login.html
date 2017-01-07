@@ -1,0 +1,41 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+    <div id="login-form-wrapper" layout="column" layout-align="center center">
+        <div id="login-form" class="md-whiteframe-8dp">
+            <div class="title" translate="LOGIN.TITLE">Log in to your account</div>
+            <form name="loginForm" novalidate ng-submit="loginCtrl.login()">
+                <md-input-container class="md-block" md-no-float>
+                    <input type="username" name="username" ng-model="loginCtrl.user.username" placeholder="Username" translate translate-attr-placeholder="LOGIN.USERNAME" required>
+                    <div ng-messages="loginForm.username.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span translate="LOGIN.ERRORS.USERNAME_REQUIRED">Username is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="loginCtrl.user.password" placeholder="Password" translate translate-attr-placeholder="LOGIN.PASSWORD" required>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span translate="LOGIN.ERRORS.PASSWORD_REQUIRED">Password is required</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <div layout="row" layout-padding layout-wrap layout-fill ng-show="loginCtrl.msg">
+                    <div md-whiteframe="3" class="padded" flex  id="msg">
+                        {{ loginCtrl.msg }}
+                    </div>
+                </div>
+
+                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine" translate="LOGIN.LOG_IN" translate-attr-aria-label="LOGIN.LOG_IN">
+                    LOG IN
+                </md-button>
+            </form>
+
+            <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <span class="text" translate="LOGIN.DONT_HAVE_ACCOUNT">Don't have an account?</span>
+                <a class="link" ui-sref="signup" translate="LOGIN.CREATE_ACCOUNT">Create an account</a>
+            </div>
+        </div>
+    </div>
+</div>

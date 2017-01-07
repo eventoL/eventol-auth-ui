@@ -1,3 +1,8 @@
+#msg{
+    background-color: rgb(244,67,54);
+    color: rgba(255,255,255,1);
+}
+
 md-autocomplete.md-default-theme, md-autocomplete {
     background: rgb(250, 250, 250);
 }
