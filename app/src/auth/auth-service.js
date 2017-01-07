@@ -22,6 +22,10 @@ angular.module('authManager', [])
             });
         };
 
+        this.logout = function logout() {
+            store.remove('accessToken');
+        };
+
         this.userLogged = function userLogged() {
             return !store.get('accessToken') || jwtHelper.isTokenExpired(store.get('accessToken'));
         };

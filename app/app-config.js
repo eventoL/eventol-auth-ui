@@ -6,6 +6,7 @@ angular.module('dogo')
             url :'/',
             templateUrl: 'src/home/home.html',
             controller: 'HomeController',
+            controllerAs: 'homeCtrl',
             data: {
                 requiresLogin: true
             }

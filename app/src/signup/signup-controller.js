@@ -16,7 +16,7 @@ function SignupController($state, authManagerService) {
             $state.go('home');
         })
         .catch(function(error) {
-            self.msg = error.data.message;
+            self.msg = error.data.errmsg;
         });
     };
 }

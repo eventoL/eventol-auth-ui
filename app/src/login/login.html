@@ -7,7 +7,7 @@
                     <input type="username" name="username" ng-model="loginCtrl.user.username" placeholder="Username" translate translate-attr-placeholder="LOGIN.USERNAME" required>
                     <div ng-messages="loginForm.username.$error" role="alert" multiple>
                         <div ng-message="required">
-                            <span translate="LOGIN.ERRORS.USERNAME_REQUIRED">Username field is required</span>
+                            <span translate="LOGIN.ERRORS.USERNAME_REQUIRED">Username is required</span>
                         </div>
                     </div>
                 </md-input-container>
@@ -16,7 +16,7 @@
                     <input type="password" name="password" ng-model="loginCtrl.user.password" placeholder="Password" translate translate-attr-placeholder="LOGIN.PASSWORD" required>
                     <div ng-messages="loginForm.password.$error" role="alert">
                         <div ng-message="required">
-                            <span translate="LOGIN.ERRORS.PASSWORD_REQUIRED">Password field is required</span>
+                            <span translate="LOGIN.ERRORS.PASSWORD_REQUIRED">Password is required</span>
                         </div>
                     </div>
                 </md-input-container>
