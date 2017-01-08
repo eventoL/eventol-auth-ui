@@ -4,7 +4,7 @@ angular.module('applications')
     .service('applicationsService', function ApplicationsService($http, apiBaseUrl) {
         var urlApps = apiBaseUrl + '/apps';
 
-        this.listApp = function listApp() {
+        this.listApps = function listApp() {
             return $http.get(urlApps);
         };
 

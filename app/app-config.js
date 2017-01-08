@@ -42,7 +42,7 @@ angular.module('dogo')
 
         jwtOptionsProvider.config({
             whiteListedDomains: ['localhost'],
-            tokenGetter: function tokenGet() {
+            tokenGetter: function getToken() {
                 return JSON.parse(localStorage.getItem('accessToken'));
             }
         });

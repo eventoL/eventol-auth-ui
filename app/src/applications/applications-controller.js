@@ -4,7 +4,7 @@ function ApplicationsController(appsService) {
     var self = this;
 
     self.apps = {};
-    appsService.listApp()
+    appsService.listApps()
         .then(function(data) {
             self.apps = data.data;
         });
