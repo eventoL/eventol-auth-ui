@@ -24,6 +24,18 @@ angular.module('dogo')
                 }
             }
         })
+        .state('home.formApp', {
+            views: {
+                'content': {
+                    templateUrl: 'src/applications/applications-edit.html',
+                    controller: 'ApplicationsController',
+                    controllerAs: 'applicationsCtrl',
+                    data: {
+                        requiresLogin: true
+                    }
+                }
+            }
+        })
         .state('login', {
             url:'/login',
             templateUrl: 'src/login/login.html',

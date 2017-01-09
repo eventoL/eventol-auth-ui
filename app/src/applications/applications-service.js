@@ -8,15 +8,18 @@ angular.module('applications')
             return $http.get(urlApps);
         };
 
-        this.addApp = function addApp() {
-
+        this.addApp = function addApp(app) {
+            // if (app.clientSecret === ) {
+            //
+            // }
+            return $http.post(urlApps, app);
         };
 
-        this.editApp = function editApp() {
-
+        this.editApp = function editApp(app) {
+            return $http.put(urlApps + '/' + app.id, app);
         };
 
-        this.deleteApp = function deleteApp() {
-
+        this.deleteApp = function deleteApp(appId) {
+            return $http.delete(urlApps + '/' + appId);
         };
     });
