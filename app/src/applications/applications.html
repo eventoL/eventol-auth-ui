@@ -8,7 +8,7 @@
         <md-list-item ng-repeat="app in applicationsCtrl.apps">
             <h2>{{ app.name }}</h2>
             <div layout="row" layout-align="end center" flex>
-                <md-button class="md-icon-button" aria-label="Edit" ui-sref="home.formApp">
+                <md-button class="md-icon-button" aria-label="Edit" ng-click="applicationsCtrl.editApp(app)">
                     <md-icon md-font-icon="icon-pencil"></md-icon>
                 </md-button>
                 <md-button class="md-icon-button" aria-label="Remove" ng-click="applicationsCtrl.deleteApp(app)">
@@ -21,7 +21,7 @@
 </div>
 
 <div layout="row" layout-align="end center">
-    <md-button class="md-fab md-warn" aria-label="Add" ui-sref="home.formApp">
+    <md-button class="md-fab md-warn" aria-label="Add" ui-sref="home.appForm">
         <md-icon md-font-icon="icon-plus"></md-icon>
     </md-button>
 </div>

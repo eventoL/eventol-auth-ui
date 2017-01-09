@@ -24,7 +24,7 @@ angular.module('dogo')
                 }
             }
         })
-        .state('home.formApp', {
+        .state('home.appForm', {
             views: {
                 'content': {
                     templateUrl: 'src/applications/applications-edit.html',

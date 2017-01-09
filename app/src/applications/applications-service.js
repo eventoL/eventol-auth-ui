@@ -4,14 +4,14 @@ angular.module('applications')
     .service('applicationsService', function ApplicationsService($http, apiBaseUrl) {
         var urlApps = apiBaseUrl + '/apps';
 
-        this.listApps = function listApp() {
+        this.listApps = function listApps() {
             return $http.get(urlApps);
         };
 
         this.addApp = function addApp(app) {
-            // if (app.clientSecret === ) {
-            //
-            // }
+            if (typeof app.clientSecret === 'undefined' || app.clientSecret === null) {
+                app.clientSecret = 'Algo';
+            }
             return $http.post(urlApps, app);
         };
 
