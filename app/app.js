@@ -4,11 +4,12 @@ angular.module('dogo', [
     'ngMaterial',
     'ngMessages',
     'ngSanitize',
-    'ui.router',
     'angular-storage',
     'angular-jwt',
+    'ui.router',
     'home',
     'login',
     'signup',
-    'authManager'
+    'authManager',
+    'applications'
 ]);
