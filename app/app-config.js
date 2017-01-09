@@ -12,9 +12,10 @@ angular.module('dogo')
                 requiresLogin: true
             }
         })
-        .state('home.apps', {
+        .state('apps', {
+            parent: 'home',
             views: {
-                'content': {
+                'content':{
                     templateUrl: 'src/applications/applications.html',
                     controller: 'ApplicationsController',
                     controllerAs: 'applicationsCtrl',
@@ -24,15 +25,17 @@ angular.module('dogo')
                 }
             }
         })
-        .state('home.appForm', {
+        .state('apps.list', {
             views: {
-                'content': {
-                    templateUrl: 'src/applications/applications-edit.html',
-                    controller: 'ApplicationsController',
-                    controllerAs: 'applicationsCtrl',
-                    data: {
-                        requiresLogin: true
-                    }
+                'apps': {
+                    templateUrl: 'src/applications/applications-list.html'
+                }
+            }
+        })
+        .state('apps.appForm', {
+            views: {
+                'apps': {
+                    templateUrl: 'src/applications/applications-edit.html'
                 }
             }
         })

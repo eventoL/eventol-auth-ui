@@ -16,7 +16,7 @@ angular.module('applications')
         };
 
         this.editApp = function editApp(app) {
-            return $http.put(urlApps + '/' + app.id, app);
+            return $http.put(urlApps + '/' + app._id, app);
         };
 
         this.deleteApp = function deleteApp(appId) {
