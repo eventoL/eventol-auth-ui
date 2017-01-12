@@ -19,11 +19,11 @@
         </md-input-container>
         <md-input-container class="md-block" md-no-float>
             <textarea ng-model="applicationsCtrl.app.callbackUrls" md-maxlength="150" rows="5"
-            placeholder="Callback URLs separated by comas"></textarea>
+            placeholder="Callback URLs separated by comas" ng-list=","></textarea>
         </md-input-container>
         <md-input-container class="md-block" md-no-float>
             <textarea ng-model="applicationsCtrl.app.logoutUrls" md-maxlength="150" rows="5"
-            placeholder="Logout URLs separated by comas"></textarea>
+            placeholder="Logout URLs separated by comas" ng-list=","></textarea>
         </md-input-container>
         <md-button type="submit" class="md-raised md-accent submit-button" aria-label="Save" ng-disabled="appForm.$invalid || appForm.$pristine">
             Save
