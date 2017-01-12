@@ -1,4 +1,5 @@
-<div layout="row" layout-align="center center">
+<div layout="column" layout-fill>
+<div layout="row" layout-align="center center" flex>
     <md-list flex="95">
         <p ng-hide="applicationsCtrl.apps.length">No applications yet!</p>
         <md-list-item ng-repeat="app in applicationsCtrl.apps">
@@ -20,4 +21,6 @@
     <md-button class="md-fab md-warn" aria-label="Add" ui-sref="apps.appForm">
         <md-icon md-font-icon="icon-plus"></md-icon>
     </md-button>
+</div>
+
 </div>
