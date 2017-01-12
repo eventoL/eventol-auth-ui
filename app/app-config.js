@@ -35,7 +35,7 @@ angular.module('dogo')
         .state('apps.appForm', {
             views: {
                 'apps': {
-                    templateUrl: 'src/applications/applications-edit.html'
+                    templateUrl: 'src/applications/applications-settings.html'
                 }
             }
         })

@@ -20,6 +20,14 @@ function ApplicationsController($mdToast, $state, applicationsService) {
     };
 
     self.saveApp = function saveApp() {
+        //Urls to array
+        if(self.app.callbackUrls.length > 0) {
+            self.app.callbackUrls = self.app.callbackUrls.split(',');
+        }
+        if(self.app.logoutUrls.length > 0) {
+            self.app.logoutUrls = self.app.logoutUrls.split(',');
+        }
+
         //If it has ID, is an edit
         if(self.app._id) {
             applicationsService.editApp(self.app)
