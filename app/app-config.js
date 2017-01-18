@@ -1,6 +1,7 @@
 'use strict';
 angular.module('dogo')
-    .config(function($mdThemingProvider, $stateProvider, $urlRouterProvider, $mdIconProvider) {
+    .config(function($mdThemingProvider, $stateProvider, $urlRouterProvider,
+        $mdIconProvider, $httpProvider, jwtOptionsProvider) {
 
         $stateProvider.state('home', {
             url :'/',
@@ -9,6 +10,33 @@ angular.module('dogo')
             controllerAs: 'homeCtrl',
             data: {
                 requiresLogin: true
+            }
+        })
+        .state('apps', {
+            parent: 'home',
+            views: {
+                'content':{
+                    templateUrl: 'src/applications/applications.html',
+                    controller: 'ApplicationsController',
+                    controllerAs: 'applicationsCtrl',
+                    data: {
+                        requiresLogin: true
+                    }
+                }
+            }
+        })
+        .state('apps.list', {
+            views: {
+                'apps': {
+                    templateUrl: 'src/applications/applications-list.html'
+                }
+            }
+        })
+        .state('apps.appForm', {
+            views: {
+                'apps': {
+                    templateUrl: 'src/applications/applications-settings.html'
+                }
             }
         })
         .state('login', {
@@ -26,6 +54,15 @@ angular.module('dogo')
         $urlRouterProvider.otherwise('/');
 
         $mdIconProvider.iconSet('avatars', 'assets/angular-material-assets/icons/avatar-icons.svg', 128);
+
+        jwtOptionsProvider.config({
+            whiteListedDomains: ['localhost'],
+            tokenGetter: function getToken() {
+                return JSON.parse(localStorage.getItem('accessToken'));
+            }
+        });
+
+        $httpProvider.interceptors.push('jwtInterceptor');
     })
     .constant('apiBaseUrl', 'http://localhost:3000/api')
     .run(function($rootScope, $state, authManagerService) {
