@@ -4,7 +4,7 @@ angular.module('dogo')
         $mdIconProvider, $httpProvider, jwtOptionsProvider) {
 
         $stateProvider.state('home', {
-            url :'/',
+            // url :'/',
             templateUrl: 'src/home/home.html',
             controller: 'HomeController',
             controllerAs: 'homeCtrl',
@@ -16,7 +16,7 @@ angular.module('dogo')
             parent: 'home',
             views: {
                 'content':{
-                    templateUrl: 'src/applications/applications.html',
+                    templateUrl: 'src/applications/layouts/applications.html',
                     controller: 'ApplicationsController',
                     controllerAs: 'applicationsCtrl',
                     data: {
@@ -26,16 +26,24 @@ angular.module('dogo')
             }
         })
         .state('apps.list', {
+            url :'/',
             views: {
                 'apps': {
-                    templateUrl: 'src/applications/applications-list.html'
+                    templateUrl: 'src/applications/layouts/applications-list.html'
                 }
             }
         })
-        .state('apps.appForm', {
+        .state('apps.details', {
             views: {
                 'apps': {
-                    templateUrl: 'src/applications/applications-settings.html'
+                    templateUrl: 'src/applications/layouts/applications-details.html'
+                }
+            }
+        })
+        .state('apps.details.settings', {
+            views: {
+                'details': {
+                    templateUrl: 'src/applications/layouts/applications-settings.html'
                 }
             }
         })
