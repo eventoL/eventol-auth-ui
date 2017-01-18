@@ -7,15 +7,10 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
     self.app = {};
 
     self.listApps = function listApps() {
-        applicationsService.listApps()
+        return applicationsService.listApps()
             .then(function(data) {
                 self.apps = data.data;
             });
-    };
-
-    self.editApp = function editApp(app) {
-        self.app = app;
-        $state.go('apps.appForm');
     };
 
     self.detailsApp = function detailsApp(app) {
@@ -24,9 +19,8 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
     };
 
     self.editApp = function editApp() {
-        applicationsService.editApp(self.app)
+        return applicationsService.editApp(self.app)
             .then(function(data) {
-                self.listApps();
                 self.app = data.data;
                 $mdToast.show(
                       $mdToast.simple()
@@ -35,8 +29,6 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
                         .position('bottom right')
                     );
             });
-        //Reset
-        self.app = {};
     };
 
     self.deleteApp = function deleteApp(ev) {
