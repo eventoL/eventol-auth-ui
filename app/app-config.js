@@ -36,7 +36,7 @@ angular.module('dogo')
         .state('apps.details', {
             views: {
                 'apps': {
-                    templateUrl: 'src/applications/layouts/applications-details.html'
+                    templateUrl: 'src/applications/layouts/application-detail.html'
                 }
             }
         })

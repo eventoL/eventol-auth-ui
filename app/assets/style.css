@@ -21,6 +21,11 @@ md-fab-speed-dial.md-fab-bottom-right {
     padding-left: 12px;
 }
 
+md-toast.toast-error .md-toast-content {
+    background-color: rgb(229,115,115) !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+}
+
 md-autocomplete.md-default-theme, md-autocomplete {
     background: rgb(250, 250, 250);
 }

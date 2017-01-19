@@ -7,7 +7,7 @@
                 <md-list-item ng-repeat="app in applicationsCtrl.apps">
                     <h3 class="appName">{{ app.name }}</h3>
                     <div layout="row" layout-align="end center" flex>
-                        <md-button class="md-icon-button" aria-label="Details" ng-click="applicationsCtrl.detailsApp(app)">
+                        <md-button class="md-icon-button" aria-label="Details" ng-click="applicationsCtrl.appDetails(app)">
                             <md-icon md-font-icon="icon-cog"></md-icon>
                         </md-button>
                     </div>
@@ -21,7 +21,7 @@
 <div class="md-padding actionButtons" layout="column">
     <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right speed-dial">
         <md-fab-trigger>
-            <md-button aria-label="Add" class="md-fab md-warn" ng-click="applicationsCtrl.newApp()">
+            <md-button aria-label="Add" class="md-fab md-warn" ng-click="applicationsCtrl.openNewAppDialog()">
                 <md-icon md-font-icon="icon-plus"></md-icon>
             </md-button>
         </md-fab-trigger>
