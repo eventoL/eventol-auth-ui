@@ -7,7 +7,7 @@ function LoginController($state, authManagerService) {
     self.login = function login() {
         authManagerService.login(self.user)
         .then(function() {
-            $state.go('home');
+            $state.go('apps.list');
         })
         .catch(function(error) {
             self.msg = error.data.message;

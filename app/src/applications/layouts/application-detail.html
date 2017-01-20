@@ -1,0 +1,61 @@
+<div layout-fill layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" flex="15" md-component-id="left" class="md-whiteframe-z2 md-primary-bg" layout-fill>
+        <div layout="column" layout-fill>
+            <div class="ms-navigation" flex="grow">
+                <ul>
+                    <li class="ms-navigation-node group">
+                        <div class="ms-navigation-item">
+                            <div class="ms-navigation-button">
+                                <span class="title">{{applicationsCtrl.app.name}}</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li class="ms-navigation-node">
+                                <div class="ms-navigation-item">
+                                    <a class="ms-navigation-button" ui-sref="apps.details.settings">
+                                        <i class="icon s16 icon-cog"></i>
+                                        <span class="title">Settings</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ms-navigation-node">
+                                <div class="ms-navigation-item">
+                                    <a class="ms-navigation-button" ui-sref="app.details.pages">
+                                        <i class="icon s16 icon-view-quilt"></i>
+                                        <span class="title">Pages</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ms-navigation-node">
+                                <div class="ms-navigation-item">
+                                    <a class="ms-navigation-button" ui-sref="app.details.connections">
+                                        <i class="icon s16 icon-share-variant"></i>
+                                        <span class="title">Connections</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="ms-navigation">
+                <ul>
+                    <li class="ms-navigation-node group">
+                        <ul>
+                            <li class="ms-navigation-node" id="buttonBack">
+                                <div class="ms-navigation-item">
+                                    <a class="ms-navigation-button" ui-sref="apps.list">
+                                        <i class="icon s16 icon-reply"></i>
+                                        <span class="title">Back to Apps</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                </ul>
+            </div>
+        </div>
+    </md-sidenav>
+    <md-content layout-fill>
+        <div ui-view="details" layout-fill></div>
+    </md-content>
+</div>
