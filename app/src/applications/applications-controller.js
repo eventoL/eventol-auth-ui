@@ -24,7 +24,7 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
                 self.app = data.data;
                 $mdToast.show(
                       $mdToast.simple()
-                        .textContent('Successfully saved')
+                        .textContent('Saved successfully.')
                         .hideDelay(3000)
                         .position('bottom right')
                     );
@@ -32,7 +32,7 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
             .catch(function(error) {
                 $mdToast.show(
                       $mdToast.simple()
-                        .textContent('An error occurred while saving. ' + error.data[0].message)
+                        .textContent('There was a problem saving your changes. ' + error.data[0].message)
                         .hideDelay(3000)
                         .position('bottom right')
                         .toastClass('toast-error')
@@ -59,7 +59,7 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
                 .catch(function(error) {
                     $mdToast.show(
                           $mdToast.simple()
-                            .textContent('An error occurred while deleting. ' + error.data[0].message)
+                            .textContent('There was a problem deleting your application. ' + error.data[0].message)
                             .hideDelay(3000)
                             .position('bottom right')
                             .toastClass('toast-error')
