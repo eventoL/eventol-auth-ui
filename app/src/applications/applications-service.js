@@ -9,9 +9,6 @@ angular.module('applications')
         };
 
         this.addApp = function addApp(app) {
-            if (typeof app.clientSecret === 'undefined' || app.clientSecret === null) {
-                app.clientSecret = 'Algo';
-            }
             return $http.post(urlApps, app);
         };
 
