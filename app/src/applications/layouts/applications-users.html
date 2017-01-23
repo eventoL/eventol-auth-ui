@@ -1,0 +1,31 @@
+<div layout="row" layout-align="center stretch">
+    <div layout="column" layout-fill layout-padding-gt-sm>
+        <h2 class="appsTitle">Users</h2>
+        <div layout="row" layout-align="center center" flex>
+            <table class="simple list-view" flex="85">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Last Login</th>
+                        <th>Provider</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in applicationUsersCtrl.app.users">
+                        <td><img ng-src="{{user.picture}}" class="md-avatar" alt="" /></td>
+                        <td>{{ user.nickname }}</td>
+                        <td>{{ user.givenName + ' ' + user.familyName }}</td>
+                        <td>{{ user.email }}</td>
+                        <!-- FIXME: Hardcode -->
+                        <td>{{ "2016-04-03" }}</td>
+                        <td>{{ "Facebook" }}</td>
+                        <!-- /Hardcode -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

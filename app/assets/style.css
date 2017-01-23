@@ -21,6 +21,19 @@ md-fab-speed-dial.md-fab-bottom-right {
     padding-left: 12px;
 }
 
+table .md-avatar {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+table .md-avatar{
+    width: 40px;
+    height: 40px;
+}
+
 md-toast.toast-error .md-toast-content {
     background-color: rgb(229,115,115) !important;
     color: rgba(0, 0, 0, 0.87) !important;

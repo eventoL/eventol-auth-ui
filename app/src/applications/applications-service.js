@@ -19,4 +19,8 @@ angular.module('applications')
         this.deleteApp = function deleteApp(appId) {
             return $http.delete(urlApps + '/' + appId);
         };
+
+        this.listAppUsers = function listAppUsers(appId) {
+            return $http.get(urlApps + '/' + appId + '/appusers');
+        };
     });

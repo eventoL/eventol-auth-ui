@@ -47,6 +47,16 @@ angular.module('dogo')
                 }
             }
         })
+        .state('apps.details.users', {
+            params: {'appId': null},
+            views: {
+                'details': {
+                    templateUrl: 'src/applications/layouts/applications-users.html',
+                    controller: 'ApplicationUsersController',
+                    controllerAs: 'applicationUsersCtrl'
+                }
+            }
+        })
         .state('login', {
             url:'/login',
             templateUrl: 'src/login/login.html',
