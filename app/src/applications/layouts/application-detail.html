@@ -20,7 +20,7 @@
                             </li>
                             <li class="ms-navigation-node">
                                 <div class="ms-navigation-item">
-                                    <a class="ms-navigation-button" ui-sref="app.details.pages">
+                                    <a class="ms-navigation-button" ui-sref="apps.details.pages">
                                         <i class="icon s16 icon-view-quilt"></i>
                                         <span class="title">Pages</span>
                                     </a>
@@ -28,9 +28,17 @@
                             </li>
                             <li class="ms-navigation-node">
                                 <div class="ms-navigation-item">
-                                    <a class="ms-navigation-button" ui-sref="app.details.connections">
+                                    <a class="ms-navigation-button" ui-sref="apps.details.connections">
                                         <i class="icon s16 icon-share-variant"></i>
                                         <span class="title">Connections</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="ms-navigation-node">
+                                <div class="ms-navigation-item">
+                                    <a class="ms-navigation-button" ui-sref="apps.details.users({ appId: applicationsCtrl.app._id  })">
+                                        <i class="icon s16 fa fa-users"></i>
+                                        <span class="title">Users</span>
                                     </a>
                                 </div>
                             </li>
