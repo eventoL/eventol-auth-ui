@@ -57,6 +57,16 @@ angular.module('dogo')
                 }
             }
         })
+        .state('apps.details.roles', {
+            params: {'appId': null},
+            views: {
+                'details': {
+                    templateUrl: 'src/applications/layouts/applications-roles.html',
+                    controller: 'ApplicationRolesController',
+                    controllerAs: 'applicationRolesCtrl'
+                }
+            }
+        })
         .state('login', {
             url:'/login',
             templateUrl: 'src/login/login.html',
