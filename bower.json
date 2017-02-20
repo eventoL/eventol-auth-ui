@@ -28,6 +28,7 @@
     "angular-translate": "^2.13.1",
     "a0-angular-storage": "^0.0.15",
     "angular-jwt": "^0.1.8",
-    "angular-ui-router": "^0.3.2"
+    "angular-ui-router": "^0.3.2",
+    "mdi": "^1.8.36"
   }
 }

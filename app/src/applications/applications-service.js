@@ -8,6 +8,10 @@ angular.module('applications')
             return $http.get(urlApps);
         };
 
+        this.getApp = function getApp(appId) {
+            return $http.get(urlApps + '/' + appId);
+        };
+
         this.addApp = function addApp(app) {
             return $http.post(urlApps, app);
         };

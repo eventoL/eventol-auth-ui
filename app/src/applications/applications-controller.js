@@ -96,5 +96,5 @@ function ApplicationsController($mdToast, $state, $mdDialog, applicationsService
     self.listApps();
 }
 
-angular.module('login')
+angular.module('applications')
     .controller('ApplicationsController', ['$mdToast', '$state', '$mdDialog', 'applicationsService', ApplicationsController]);

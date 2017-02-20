@@ -1,0 +1,72 @@
+<div layout="row" layout-align="center stretch">
+    <div layout="column" layout-fill layout-padding-gt-sm>
+        <h2 class="appsTitle">Roles</h2>
+        <div layout="row" layout-align="center center" flex>
+            <md-list flex-xs="100" flex-gt-xs="85">
+                <p ng-hide="applicationRolesCtrl.app.roles.length">No roles yet!</p>
+                <md-list-item ng-repeat="role in applicationRolesCtrl.app.roles track by $index">
+                    <md-list-item class="md-2-line">
+                        <div class="md-list-item-text">
+                            <h3 class="appName">{{ role.roleName }}</h3>
+                            <p>{{ role.roleDescription }}</p>
+                        </div>
+                    </md-list-item>
+                    <div layout="row" layout-align="end center" flex>
+                        <md-button class="md-icon-button" aria-label="Details" ng-click="applicationRolesCtrl.editRole($index)">
+                            <md-icon md-font-icon="icon-pencil"></md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="Details" ng-click="applicationRolesCtrl.removeRole($index)">
+                            <md-icon md-font-icon="icon-delete"></md-icon>
+                        </md-button>
+                    </div>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
+</div>
+
+<div class="md-padding actionButtons" layout="column">
+    <md-fab-speed-dial md-direction="up" class="md-fling md-fab-bottom-right speed-dial">
+        <md-fab-trigger>
+            <md-button aria-label="Add role" class="md-fab md-warn" ng-click="applicationRolesCtrl.addRole()">
+                <md-icon md-font-icon="icon-plus"></md-icon>
+            </md-button>
+        </md-fab-trigger>
+    </md-fab-speed-dial>
+</div>
+
+
+<!-- New Role Modal -->
+<div style="visibility: hidden">
+    <div class="md-dialog-container" id="newRoleForm">
+        <md-dialog>
+            <md-dialog-content>
+                <h2>Create new role</h2>
+                <form name="roleForm">
+                    <md-input-container class="md-block" md-no-float>
+                        <input type="name" name="roleName" ng-model="applicationRolesCtrl.newRole.roleName" placeholder="Role name" required>
+                        <div ng-messages="roleForm.roleName.$error" role="alert" multiple>
+                            <div ng-message="required">
+                                <span>Role name is required</span>
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" md-no-float>
+                        <textarea ng-model="applicationRolesCtrl.newRole.roleDescription" md-maxlength="150" rows="2" placeholder="Role description" aria-label="Role description"></textarea>
+                    </md-input-container>
+                </form>
+                <div layout="row" layout-padding layout-wrap layout-fill ng-show="applicationRolesCtrl.msg">
+                    <div md-whiteframe="3" class="padded" flex id="msg">
+                        {{ applicationRolesCtrl.msg }}
+                    </div>
+                </div>
+                <md-dialog-acctions>
+                    <md-button type="submit" ng-click="applicationRolesCtrl.saveRole()" class="form-submit">
+                        Save
+                    </md-button>
+                </md-dialog-acctions>
+            </md-dialog-content>
+        </md-dialog>
+    </div>
+</div>

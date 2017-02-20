@@ -14,5 +14,5 @@ function ApplicationUsersController($stateParams, applicationsService) {
     self.listUsers();
 }
 
-angular.module('login')
+angular.module('applications')
     .controller('ApplicationUsersController', ['$stateParams', 'applicationsService', ApplicationUsersController]);
